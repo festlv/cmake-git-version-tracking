@@ -6,6 +6,7 @@ project(cmake_git_version_tracking
 # the source code for watching a git repository.
 set(PRE_CONFIGURE_FILE "git.c.in")
 set(POST_CONFIGURE_FILE "${CMAKE_CURRENT_BINARY_DIR}/git.c")
+set_property(SOURCE ${POST_CONFIGURE_FILE} PROPERTY SKIP_AUTOGEN ON)
 include(git_watcher.cmake)
 
 # Create a library out of the compiled post-configure file.
